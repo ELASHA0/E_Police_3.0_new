@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "921863741476",
+    "project_id": "allergyapp-f1360",
+    "storage_bucket": "allergyapp-f1360.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921863741476:android:3e45d503985e066c08f8b1",
+        "android_client_info": {
+          "package_name": "com.example.allergyapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_EmEPkkbTx2YSoXITfuhVKMvBDBcHwzY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
