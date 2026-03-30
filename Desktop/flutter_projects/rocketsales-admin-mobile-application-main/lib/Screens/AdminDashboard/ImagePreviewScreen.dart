@@ -1,0 +1,120 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import '../../resources/my_colors.dart';
+import 'AdminDashboardController.dart';
+import 'dart:typed_data';
+
+import 'AdminDashboardScreen.dart';
+
+class ImagePreviewScreen extends StatelessWidget {
+  final Uint8List imageFile;
+
+  ImagePreviewScreen({super.key, required this.imageFile});
+
+  final adminDashboardController controller =
+  Get.find<adminDashboardController>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.black,
+        appBar: AppBar(
+          backgroundColor: MyColor.dashbord,
+          title: const Text(
+            'Profile picture',
+            style: TextStyle(color: Colors.white),
+          ),
+          leading: const BackButton(
+            color: Colors.white,
+          ),
+        ),
+        body: Stack(
+          children: [
+            Center(
+              child: Image.memory( // ✅ use memory instead of file
+                imageFile,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: double.infinity,
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding:
+                const EdgeInsets.only(right: 12.0, left: 12, bottom: 60),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: FilledButton(
+                        style: FilledButton.styleFrom(
+                          backgroundColor:
+                          const Color.fromRGBO(28, 80, 140, 0.59),
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                        ),
+                        onPressed: () {
+                          controller.updateImage(context).then((_) {
+                            Navigator.pushAndRemoveUntil<dynamic>(
+                              context,
+                              MaterialPageRoute<dynamic>(
+                                builder: (BuildContext context) =>
+                                DashboardAdmin(),
+                              ),
+                              (route) => false, //if you want to disable back feature set to false
+                            );
+                            controller.getProfileImage();
+                          });
+                        },
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.edit),
+                            SizedBox(width: 6),
+                            Text("Another"),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 12), // spacing between buttons
+                    Expanded(
+                      child: FilledButton(
+                        style: FilledButton.styleFrom(
+                          backgroundColor:
+                          const Color.fromRGBO(28, 80, 140, 0.59),
+                          foregroundColor: Colors.white,
+                          padding: const EdgeInsets.symmetric(vertical: 16),
+                        ),
+                        onPressed: () {
+                          controller.deleteImage(context).then((_) {
+                            Navigator.pushAndRemoveUntil<dynamic>(
+                              context,
+                              MaterialPageRoute<dynamic>(
+                                builder: (BuildContext context) =>
+                                    DashboardAdmin(),
+                              ),
+                                  (route) => false, //if you want to disable back feature set to false
+                            );
+                            controller.getProfileImage();
+                          });
+                        },
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.delete),
+                            SizedBox(width: 6),
+                            Text("Delete"),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ));
+  }
+}
