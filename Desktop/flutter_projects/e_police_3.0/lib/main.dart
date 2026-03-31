@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 
-import 'Screens/AuthController.dart';
-import 'Screens/LoginScreen.dart';
-import 'Screens/OTPScreen.dart';
+import 'Screens/Login/AuthController.dart';
+import 'Screens/Login/LoginScreen.dart';
+import 'Screens/Login/OTPScreen.dart';
 import 'Screens/RegistrationForm.dart';
-import 'Screens/SplashScreen.dart';
+import 'Screens/Login/SplashScreen.dart';
 
 void main() async {
   await dotenv.load(fileName: '.env');

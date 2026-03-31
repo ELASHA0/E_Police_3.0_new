@@ -6,8 +6,8 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../resources/AppAssets.dart';
-import '../../resources/AppColor.dart';
+import '../../../resources/AppAssets.dart';
+import '../../../resources/AppColor.dart';
 import 'AuthController.dart';
 
 class OtpVerificationScreen extends StatelessWidget {

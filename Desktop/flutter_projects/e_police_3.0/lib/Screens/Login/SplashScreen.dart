@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 
-import '../../resources/AppAssets.dart';
+import '../../../resources/AppAssets.dart';
 
 class SplashScreen extends StatefulWidget  {
   const SplashScreen({super.key});

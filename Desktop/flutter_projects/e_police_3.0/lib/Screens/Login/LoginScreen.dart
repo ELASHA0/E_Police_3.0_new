@@ -5,13 +5,13 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
-import '../../resources/AppAssets.dart';
-import '../../resources/AppColor.dart';
+import '../../../resources/AppAssets.dart';
+import '../../../resources/AppColor.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'AuthController.dart';
-import 'RegistrationController.dart';
-import 'RegistrationForm.dart';
+import '../RegistrationController.dart';
+import '../RegistrationForm.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});

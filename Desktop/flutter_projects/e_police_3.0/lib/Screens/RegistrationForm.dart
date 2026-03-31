@@ -13,7 +13,7 @@ import 'RegistrationController.dart';
 class Registrationform extends StatelessWidget {
   final RegistrationController controller = Get.put(RegistrationController());
 
-  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  //final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   Registrationform({super.key});
 
@@ -193,7 +193,7 @@ class Registrationform extends StatelessWidget {
                             ),
                           ),
                           onPressed: () {
-                            final isValid = controller.formKey.currentState!.validate();
+                            /*final isValid = controller.formKey.currentState!.validate();
                             if (isValid) {
                               print("Name: ${controller.nameController.text}");
                               print("Mobile: ${controller.mobileController
@@ -205,6 +205,23 @@ class Registrationform extends StatelessWidget {
                               print("Gender: ${controller.gender.value}");
                             }
                             Get.to(AddressInfoScreen());
+                            controller.getStates();*/
+                            if (controller.validateFormPersonalDetails(controller.formKey)) {
+                              print("Name: ${controller.nameController.text}");
+                              print("Mobile: ${controller.mobileController
+                                  .text}");
+                              print("Password: ${controller.passwordController
+                                  .text}");
+                              print(
+                                  "Email: ${controller.emailController.text}");
+                              print("Gender: ${controller.gender.value}");
+                              Get.to(AddressInfoScreen());
+                              controller.getStates();
+
+
+
+                            }
+
 
 
                           },
